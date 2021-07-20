@@ -40,6 +40,7 @@ const Wrap = styled.div `
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
+    text-align: center;
     justify-content: space-between;
     align-items: center;
     background-image: ${props => `url("/images/${props.bgImage}")`}

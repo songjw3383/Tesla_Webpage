@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import styled from "styled-components"
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import LanguageIcon from '@material-ui/icons/Language';
+import CyberTruck from './CyberTruck'
+import { Link, Route } from 'react-router-dom';
 import { selectCars } from '../features/car/carSlice'
 import { useSelector} from 'react-redux'
 
@@ -14,7 +17,9 @@ function Header() {
         <div>
             <Container>
                 <a>
-                    <img src="/images/logo.svg" alt="" />
+                    <Link to="/">
+                        <img src="/images/logo.svg" alt="" />
+                    </Link>
                 </a>
                 <Menu>
                     {cars && cars.map((car, index) =>
@@ -37,11 +42,18 @@ function Header() {
                     <li><a href="#">Existing Inventory</a></li>
                     <li><a href="#">Used Inventory</a></li>
                     <li><a href="#">Trade-in</a></li>
-                    <li><a href="#">Cybertruck</a></li>
+                    <li><Link to ="/cybertruck">CyberTruck</Link></li>
                     <li><a href="#">Roadster</a></li>
                     <li><a href="#">Semi</a></li>
                     <li><a href="#">Charging</a></li>
                     <li><a href="#">Powerwall</a></li>
+                    <LanguageContainer>
+                        <LanguageIcon />
+                            <li>
+                                <strong>United States</strong>
+                                <small>English</small>
+                            </li>
+                            </LanguageContainer>
                 </BurgerNav>
             </Container>
         </div>
@@ -71,12 +83,12 @@ const Menu = styled.div `
 
     a {
         font-weight: 600;
-        text-transform: uppercase;
-        padding: 0 10px;
+        padding: 0 15px;
         flex-wrap: nowrap;
+        font-size: 0.9rem;
     }
 
-    @media(max-width: 768px) {
+    @media(max-width: 1024px) {
         display: none;
     }
 `
@@ -88,7 +100,13 @@ const RightMenu = styled.div `
     a{
         font-weight: 600;
         text-transform: uppercase;
-        margin-right: 10px;
+        margin-right: 15px;
+        padding: 0 10px;
+        font-size: 0.9rem;
+
+        @media(max-width: 1024px) {
+            display: none;
+        }
     }
 
 `
@@ -115,11 +133,19 @@ const BurgerNav = styled.div `
     transition: transform  0.2s ease-in-out;
 
     li {
-        padding: 15px 0;
-        
+        padding: 15px 15px;
         a {
             font-weight: 600;
+            color: black;
+            opacity: 1;
         }
+    }
+    
+    li:hover {
+        background-color: lightgrey;
+        // opacity: 0.4;
+        border-radius: 15px;
+        transition: transform 0.2s ;
     }
     
 `
@@ -132,4 +158,18 @@ const CloseWrapper = styled.div `
     display: flex;
     justify-content: flex-end;
     margin-bottom: 30px;
+`
+
+const LanguageContainer = styled.div `
+    display: flex;
+    align-items: center;
+    
+    li {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+    strong {
+        margin-bottom: 5px;
+    }
 `
