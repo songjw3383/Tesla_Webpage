@@ -83,9 +83,9 @@ const Menu = styled.div `
 
     a {
         font-weight: 600;
-        padding: 0 15px;
+        padding: 0 30px;
         flex-wrap: nowrap;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     @media(max-width: 1024px) {

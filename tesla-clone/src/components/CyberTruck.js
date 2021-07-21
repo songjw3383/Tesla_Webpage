@@ -14,7 +14,10 @@ function CyberTruck() {
                 </Main>
                 <Description>
                     <img src="https://www.tesla.com/xNVh4yUEc3B9/02_Desktop.jpg" alt="" />
-                    <h1>EXOSKELETON</h1>
+                    <First>
+                        <p>EXOSKELETON</p>
+                        <span>Cybertruck is built with an exterior shell made for ultimate durability and passenger protection. Starting with a nearly impenetrable exoskeleton, every component is designed for superior strength and endurance, from Ultra-Hard 30X Cold-Rolled stainless-steel structural skin to Tesla armor glass.</span>
+                        </First>
                 </Description>
 
             </CyberTruck_CT>
@@ -25,7 +28,7 @@ function CyberTruck() {
 export default CyberTruck
 
 const CyberTruck_CT = styled.div `
-    height: 100vh;
+    background-color: black;
 `
 const Main = styled.div `
     width: 100vw;
@@ -49,18 +52,20 @@ const Title = styled.img `
 `
 
 const TitleBottom = styled.div `
-padding-bottom: 10vh;
-letter-spacing: 2px;
-display: flex;
-flex-direction: column;
-align-items: center;
-p{
-    font-size: 0.9rem;
-    color: white;
-    font-weight: 600;
-    text-shadow: 1px 1px 10px ;
-    text-transform: uppercase;
-}
+    padding-bottom: 10vh;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    p{
+        font-size: 0.8rem;
+        color: white;
+        font-weight: 600;
+        text-shadow: 1px 1px 4px ;
+        text-transform: uppercase;
+    }
 
 `
 
@@ -73,12 +78,37 @@ const TitleBottomBtn = styled.p `
 `
 
 const Description = styled.div `
-    background-color: black;
+    border : 1px solid white; //for template
     
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75vw;
+    max-width: 75vw;
+    display: flex;
+    flex-direction: column;
     img {
-        display: block;
+        width: 100%;
         padding-top: 3rem;
         margin: 0px auto;
     }
     
+`
+
+const First = styled.div `
+    padding: 1rem 5rem 0rem 5rem;
+    p {
+        color: white;
+        font-weight: 600;
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 3px ;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    span {
+        color: white;
+    }
+
 `
