@@ -1,5 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import CyberTruckSlider from './CyberTruckSlider';
+import SpecInfo from './SpecInfo';
+import Footer from './Footer';
+import Fade from 'react-reveal' // importing react-reval effect
 
 function CyberTruck() {
     return (
@@ -13,13 +17,45 @@ function CyberTruck() {
                     </TitleBottom>
                 </Main>
                 <Description>
+
+                    <Fade bottom>
+
                     <img src="https://www.tesla.com/xNVh4yUEc3B9/02_Desktop.jpg" alt="" />
                     <First>
-                        <p>EXOSKELETON</p>
-                        <span>Cybertruck is built with an exterior shell made for ultimate durability and passenger protection. Starting with a nearly impenetrable exoskeleton, every component is designed for superior strength and endurance, from Ultra-Hard 30X Cold-Rolled stainless-steel structural skin to Tesla armor glass.</span>
+                        <span>EXOSKELETON</span>
+                        <p>Cybertruck is built with an exterior shell made for ultimate durability and passenger protection. Starting with a nearly impenetrable exoskeleton, every component is designed for superior strength and endurance, from Ultra-Hard 30X Cold-Rolled stainless-steel structural skin to Tesla armor glass.</p>
                         </First>
-                </Description>
+                    
+                    <img src="https://www.tesla.com/xNVh4yUEc3B9/03_Desktop.jpg" alt="" />
+                    <First>
+                        <h2>ULTRA-HARD 30X COLD-ROLLED STAINLESS STEEL</h2>
+                        <p>If there was something better, we’d use it. Help eliminate dents, damage and long-term corrosion with a smooth monochrome exoskeleton that puts the shell on the outside of the car and provides you and your passengers maximum protection.</p>
+                    </First>
+                    <img src="https://www.tesla.com/xNVh4yUEc3B9/04_Desktop.jpg" alt="" />
+                    <First>
+                        <h2>TESLA ARMOR GLASS</h2>
+                        <p>Ultra-strong glass and polymer-layered composite can absorb and redirect impact force for improved performance and damage tolerance.</p>
+                    </First>
+                    
+                    {/* Carousel Section */}
+                    <CyberTruckSlider />
 
+                    <video autoplay="autoplay" muted="muted" loop="loop" src="https://www.tesla.com/xNVh4yUEc3B9/performance_video_desktop.mp4"></video>
+                    <First>
+                        <span>PERFORMANCE AND EFFICIENCY</span>
+                        <p>Now entering a new class of strength, speed and versatility—only possible with an all-electric design. The powerful drivetrain and low center of gravity provides extraordinary traction control and torque—enabling acceleration from 0-60 mph in as little as 2.9 seconds and up to 500 miles of range.</p>
+                    </First>
+                    <SpecInfo />
+
+                    </Fade>   
+                    
+                </Description>
+                
+                <OrderBottom>
+                    
+                    <img src="https://www.tesla.com/xNVh4yUEc3B9/13_Desktop_Order.png" alt="" />
+                </OrderBottom>
+            <Footer/>
             </CyberTruck_CT>
         </div>
     )
@@ -70,21 +106,28 @@ const TitleBottom = styled.div `
 `
 
 const TitleBottomBtn = styled.p `
+    color: white;
+    font-weight:600;
     margin-top: 5vh;
     border: 4px solid white;
     padding: 5px;
     width: 150px;
+    height: 40px;
     
 `
 
 const Description = styled.div `
-    border : 1px solid white; //for template
+    // border : 1px solid white; //for template
     
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    width: 75vw;
-    max-width: 75vw;
+    width: 70vw;
+
+    @media(max-width: 1280px) {
+        width: 90vw
+    }
+    
     display: flex;
     flex-direction: column;
     img {
@@ -96,19 +139,36 @@ const Description = styled.div `
 `
 
 const First = styled.div `
-    padding: 1rem 5rem 0rem 5rem;
-    p {
+    padding: 2rem 5rem 0rem 5rem;
+    margin-bottom: 5rem;
+    @media (max-width: 1280px) {
+        padding: 1rem 5rem 0rem 0rem;
+    }
+    span {
         color: white;
         font-weight: 600;
         font-size: 1.5rem;
         text-shadow: 1px 1px 3px ;
         letter-spacing: 5px;
         text-transform: uppercase;
-        margin-bottom: 1rem;
     }
 
-    span {
-        color: white;
+    h2 {
+        font-size: 1rem;
+        color: rgb(185,185,185);
+        letter-spacing: 3px;
     }
+
+    p {
+        color: rgb(185,185,185);
+        margin-top: 1rem;
+    }
+`
+
+const OrderBottom = styled.div `
+    margin: 5rem 0 5rem 0;
+    display: flex;
+    align-item: center;
+    justify-content: center;
 
 `

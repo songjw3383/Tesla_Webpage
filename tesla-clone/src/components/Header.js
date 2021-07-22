@@ -3,7 +3,7 @@ import styled from "styled-components"
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import LanguageIcon from '@material-ui/icons/Language';
-import CyberTruck from './CyberTruck'
+
 import { Link, Route } from 'react-router-dom';
 import { selectCars } from '../features/car/carSlice'
 import { useSelector} from 'react-redux'
@@ -88,7 +88,7 @@ const Menu = styled.div `
         font-size: 1rem;
     }
 
-    @media(max-width: 1024px) {
+    @media(max-width: 1280px) {
         display: none;
     }
 `
