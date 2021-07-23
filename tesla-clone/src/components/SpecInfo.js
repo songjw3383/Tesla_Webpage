@@ -1,23 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import {useDispatch, useSelector} from 'react-redux'
+import {single, dual, selectSpecs, selectOptions} from '../features/car/specSlice'
 
 function SpecInfo() {
-    const onChangeValue = (event) => {
-        console.log(event.target.value);
-    }
+    const [inputStatus, setInputStatus] = useState("");
+    const dispatch = useDispatch();
+
+    const handleClickRadioButton = (radioBtnName) => {
+        setInputStatus(radioBtnName);
+        dispatch({type: inputStatus});
+    };
+    console.log(dispatch);
+
+    const specs = useSelector(selectSpecs);
+    const options = useSelector(selectOptions);
+
     return (
         <Spec>
             <CarPicture src="https://tesla-cdn.thron.com/delivery/public/image/tesla/cybertruck_top/bvlatuR/std/0x0/cybertruck_top" alt="" />
             <Form>
             <h2>SPECS</h2>
-                <form onChange={onChangeValue}>
-                    <label><input type="radio" name="Single" value="Single" checked/>Single Motor RWD</label>
-                    <label><input type="radio" name="Dual" value="Dual"/>Dual Motor RWD</label>
-                    <label><input type="radio" name="Tri" value="Tri"/>Tri Motor RWD</label>
+                <form>
+                    <label><input type="radio" name="Single" value="Single" checked={inputStatus === 'Single'} onClick={() => handleClickRadioButton('Single')} />Single Motor RWD</label>
+                    <label><input type="radio" name="Dual" value="Dual" checked={inputStatus === 'Dual'} onClick={() => handleClickRadioButton('Dual')}/>Dual Motor RWD</label>
+                    <label><input type="radio" name="Tri" value="Tri" checked={inputStatus === 'Tri'} onClick={() => handleClickRadioButton('Tri')}/>Tri Motor RWD</label>
                 </form>
             
                 
-            <ul><li>0-60 MPH</li><li>UNDER 6.5 SECONDS</li></ul>
+            {/* <ul><li>0-60 MPH</li><li>under 0.65</li></ul>
             <ul><li>Range</li><li>250+ MILES (EPA EST.)</li></ul>
             <ul><li>DRIVETRAIN</li><li>REAR-WHEEL DRIVE</li></ul>
             <ul><li>STORAGE</li><li>100 CU FT</li></ul>
@@ -27,7 +38,21 @@ function SpecInfo() {
             <ul><li>ADAPTIVE AIR SUSPENSION</li><li>STANDARD</li></ul>
             <ul><li>GROUND CLEARANCE</li><li>UP TO 16"</li></ul>
             <ul><li>APPROACH ANGLE</li><li>35 DEGREES</li></ul>
-            <ul><li>DEPARTURE ANGLE</li><li>28 DEGREES</li></ul>
+            <ul><li>DEPARTURE ANGLE</li><li>28 DEGREES</li></ul> */}
+            <SpecTable>
+                
+                    <ul>
+                        {specs && specs.map((spec, index) =>
+                        <li key={index}>{spec}</li>)}
+                    </ul>
+                    <ul>
+
+                    {options && options.map((options, index) =>
+                        <li key={index}>{options}</li>)}
+
+                    </ul>
+                
+            </SpecTable>
 
             <span>*All configurations are US specification only. Global specifications will be developed at a later date based on demand.</span>
             </Form>
@@ -88,25 +113,30 @@ const Form = styled.div `
             background-color: white;
         }
     }
-    ul {
-        border-top: 1px solid white;
-        margin: 1rem 0 1rem 0;
-        padding: 1rem 0 0rem 0;
-        display: flex;
-        list-style: none;
-        justify-content: space-between;
-        li {
-            color: white;
-            letter-spacing: 2px;
-            font-weight: 600;
-            color: grey;
-        }
-    }
     span {
         color: grey;
         font-weight: 600;
     }
     
+`
+const SpecTable = styled.div `
+    margin: 2rem 0 2rem 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+
+    display: flex;
+    justify-content: space-between;
+    
+    ul {
+        padding: 1rem 0 1rem 0;
+        list-style: none;
+    }
+    li {
+        color : lightgrey;
+        margin: 0.5rem 0 1rem 0 ;
+        letter-spacing: 2px;
+        font-weight: 600;
+    }
 `
 
 const CarPicture = styled.img `
