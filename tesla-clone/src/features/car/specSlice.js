@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createAction, createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     specsName: 
@@ -13,20 +13,22 @@ const specSlice = createSlice({
     name: "spec",
     initialState,
     reducers: {
-        Single:(state) => {
-            state.push(initialState.Single);
+        specsName:(state) => {
+            state.push(initialState.specsName)
         },
-        Dual:(state) => {
-            state.push(initialState.Dual);
+        Single:(state, action) => {
+            action = state.push(initialState.Single);
+        },
+        Dual:(state,action) => {
+            action = state.push(initialState.Dual);
         }
         
     }
 })
-
-
+console.log(specSlice.actions);
 
 export const selectSpecs = state => state.spec.specsName;
-export const selectOptions = state => state.reducers;
-
+export const Single = state => state.spec.Single;
+export const Dual = state => state.spec.Dual;
 
 export default specSlice.reducer

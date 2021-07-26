@@ -43,7 +43,7 @@ function Header() {
                     <li><a href="#">Used Inventory</a></li>
                     <li><a href="#">Trade-in</a></li>
                     <li><Link to ="/cybertruck">CyberTruck</Link></li>
-                    <li><a href="#">Roadster</a></li>
+                    <li><Link to ="/roadster">Roadster</Link></li>
                     <li><a href="#">Semi</a></li>
                     <li><a href="#">Charging</a></li>
                     <li><a href="#">Powerwall</a></li>

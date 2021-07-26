@@ -1,44 +1,31 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import {useDispatch, useSelector} from 'react-redux'
-import {single, dual, selectSpecs, selectOptions} from '../features/car/specSlice'
+import {Dual, selectSpecs, Single} from '../features/car/specSlice'
 
 function SpecInfo() {
     const [inputStatus, setInputStatus] = useState("");
     const dispatch = useDispatch();
 
-    const handleClickRadioButton = (radioBtnName) => {
-        setInputStatus(radioBtnName);
-        dispatch({type: inputStatus});
-    };
-    console.log(dispatch);
+    // const handleClickRadioButton = (radioBtnName) => {
+    //     setInputStatus(radioBtnName);
+        
+    // };
+    // console.log(dispatch.type);
 
     const specs = useSelector(selectSpecs);
-    const options = useSelector(selectOptions);
-
+    const options = useSelector(Dual);
+    
     return (
         <Spec>
             <CarPicture src="https://tesla-cdn.thron.com/delivery/public/image/tesla/cybertruck_top/bvlatuR/std/0x0/cybertruck_top" alt="" />
             <Form>
             <h2>SPECS</h2>
                 <form>
-                    <label><input type="radio" name="Single" value="Single" checked={inputStatus === 'Single'} onClick={() => handleClickRadioButton('Single')} />Single Motor RWD</label>
-                    <label><input type="radio" name="Dual" value="Dual" checked={inputStatus === 'Dual'} onClick={() => handleClickRadioButton('Dual')}/>Dual Motor RWD</label>
-                    <label><input type="radio" name="Tri" value="Tri" checked={inputStatus === 'Tri'} onClick={() => handleClickRadioButton('Tri')}/>Tri Motor RWD</label>
+                    <label><input type="radio" name="Single" value="Single" checked={inputStatus === 'Single'} onClick={() => dispatch({type: "Single"})} />Single Motor RWD</label>
+                    <label><input type="radio" name="Dual" value="Dual" checked={inputStatus === 'Dual'} onClick={() => dispatch({type: "Dual"})}/>Dual Motor RWD</label>
+                    <label><input type="radio" name="Tri" value="Tri" checked={inputStatus === 'Tri'} onClick={() => dispatch({type:'tri'})}/>Tri Motor RWD</label>
                 </form>
-            
-                
-            {/* <ul><li>0-60 MPH</li><li>under 0.65</li></ul>
-            <ul><li>Range</li><li>250+ MILES (EPA EST.)</li></ul>
-            <ul><li>DRIVETRAIN</li><li>REAR-WHEEL DRIVE</li></ul>
-            <ul><li>STORAGE</li><li>100 CU FT</li></ul>
-            <ul><li>VAULT LENGTH</li><li>6.5 FT</li></ul>
-            <ul><li>TOWING CAPACITY</li><li>7,500+ LBS</li></ul>
-            <ul><li>AUTOPILOT</li><li>STANDARD</li></ul>
-            <ul><li>ADAPTIVE AIR SUSPENSION</li><li>STANDARD</li></ul>
-            <ul><li>GROUND CLEARANCE</li><li>UP TO 16"</li></ul>
-            <ul><li>APPROACH ANGLE</li><li>35 DEGREES</li></ul>
-            <ul><li>DEPARTURE ANGLE</li><li>28 DEGREES</li></ul> */}
             <SpecTable>
                 
                     <ul>

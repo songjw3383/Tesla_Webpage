@@ -6,6 +6,7 @@ import Home from './components/Home';
 import { Component } from 'react';
 import CyberTruck from './components/CyberTruck';
 import Footer from './components/Footer';
+import Roadster from './components/Roadster';
 
 class App extends Component {
   render() {
@@ -16,6 +17,8 @@ class App extends Component {
           <Switch>
             <Route path="/" exact render={() => <Home />} />
             <Route path="/cybertruck" render={() => <CyberTruck />} />
+            <Route path="/roadster" render={() => <Roadster /> } />
+
           </Switch>
         </Router>
       </>
