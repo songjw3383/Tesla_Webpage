@@ -63,14 +63,15 @@ const Spec = styled.div `
     }
 
     img {
-        width: 10vw;
+        width: 20vw;
     }
     
 `
 
 const Form = styled.div `
     margin-top 1rem;
-    flex: 0.6;
+    flex: 0.7;
+    margin-left: 5rem;
     form {
         align-item: center;
         justify-content: center;
@@ -128,7 +129,8 @@ const SpecTable = styled.div `
 `
 
 const CarPicture = styled.img `
-  width: 100%;
-  max-height: 80%;
+  padding: 2rem;
+  height: 800px;
+  flex: 0.3;
 
 `

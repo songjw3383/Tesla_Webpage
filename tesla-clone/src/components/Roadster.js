@@ -3,14 +3,16 @@ import styled from 'styled-components'
 import Fade from 'react-reveal'
 import SpeedIcon from '@material-ui/icons/Speed';
 import RoadsterInfo from './RoadsterInfo'
+
 function Roadster() {
     return (
         <Roadster_CT>
             <Main>
-                <ItemText>
-                    <header>Roadster</header>
-                    <p>The quickest car in the world, with record-setting acceleration, range and performance.</p>
-                </ItemText>
+                <Fade clear>
+                    <ItemText>
+                        <header>Roadster</header>
+                        <p>The quickest car in the world, with record-setting acceleration, range and performance.</p>
+                    </ItemText>
                 <Stats>
                     <li>
                         <StatsTop>
@@ -45,6 +47,7 @@ function Roadster() {
                         <span>RESERVE NOW</span>
                     </li>
                 </Stats>
+                </Fade>
                 <DownArrow src="/images/down-arrow.svg" />
             </Main>
             <RoadsterInfo />
