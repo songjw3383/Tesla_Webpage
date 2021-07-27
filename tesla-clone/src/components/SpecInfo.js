@@ -114,6 +114,7 @@ const SpecTable = styled.div `
     display: flex;
     justify-content: space-between;
     
+    
     ul {
         padding: 1rem 0 1rem 0;
         list-style: none;
@@ -127,6 +128,7 @@ const SpecTable = styled.div `
 `
 
 const CarPicture = styled.img `
-    flex: 0.2;
-    max-width: 100%;
+  width: 100%;
+  max-height: 80%;
+
 `
