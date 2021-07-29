@@ -40,6 +40,5 @@
 - Vimeo 영상표시를 위해 u-wave/react-vimeo 의 Vimeo 모듈 사용.
 - Roadster의 spec 관련 내용은 roadsterSlice.js에서 처리하도록 구현. 
 <hr/>
-*Example*
 ![roadster](https://user-images.githubusercontent.com/56250064/127465976-471dc103-b3f0-44e9-9c0f-a59aaa20c722.gif)
 
