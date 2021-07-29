@@ -24,7 +24,7 @@
 6. react-reveal ( for page content animation )
 
 ## 상세 페이지 (진행 중)
-**메인 페이지(Home.js)**
+### 1. 메인 페이지(Home.js)
 ![Main](https://user-images.githubusercontent.com/56250064/127433589-5dd16a1c-866c-4bbb-a884-37482a884694.png)
 - 반응형 네비게이션 바 기능 (1280px).
 - react-reveal 의 Fade 모듈을 사용하여 텍스트에 애니메이션 효과 적용.
@@ -32,7 +32,7 @@
 - 메뉴바의 항목들은 carslice.js에 정의된 초기값을 state로 받아와 처리.
 <hr/>
 
-**Roadster(Roadster.js)**
+### 2. Roadster(Roadster.js)
 ![Roadster](https://user-images.githubusercontent.com/56250064/127465889-fd233357-2f6b-4543-9b63-ee649baa5ab2.png)
 - 반응형 웹에 따라 유기적으로 UI 요소들이 배치되도록 설계.
 - 첫 메인 페이지(세션)은 Roadster.js 에서 처리, 그 외 내용은 RoadsterInfo.js에서 처리 하도록 분리
@@ -40,6 +40,6 @@
 - Vimeo 영상표시를 위해 u-wave/react-vimeo 의 Vimeo 모듈 사용.
 - Roadster의 spec 관련 내용은 roadsterSlice.js에서 처리하도록 구현. 
 <hr/>
-
+#### example
 ![roadster](https://user-images.githubusercontent.com/56250064/127466983-5bd0fe01-2d62-4033-9600-c1ead78897fd.gif)
 
