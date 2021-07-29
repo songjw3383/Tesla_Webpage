@@ -12,18 +12,7 @@
 
 - **페이지 구성 (flow chart)** (진행중)
 
-```mermaid
-graph LR
-Z[Index]-- <Provider />--> A
-A[App] -- <Router /> --> B[Home]
-B -- < /cybertruck >--> C[cybertruckMainPg]
-
-C --> E[ImgSlider]
-C --> F[SpecTable]
-
-B -- < /roadster > --> D[roadsterMainPg]
-D --> G[roadsterDesc]
-```
+![flowchart](https://user-images.githubusercontent.com/56250064/127433885-43af16fb-1d7e-4899-a370-8c8f28004d34.png)
 
 
 ## 사용기술
