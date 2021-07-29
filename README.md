@@ -45,3 +45,18 @@
 
 ![roadster](https://user-images.githubusercontent.com/56250064/127466983-5bd0fe01-2d62-4033-9600-c1ead78897fd.gif)
 
+### 3. CyberTruck (Cybertruck.js)
+![Cybertruck](https://user-images.githubusercontent.com/56250064/127509755-e2b09bd1-15a1-4a4d-9242-b20016f41bf6.png)
+- 반응형 웹에 따라 유기적으로 UI 요소들이 배치되도록 설계.
+- Slider 와 Spec부분을 나누어서 설계
+1. CyberTruck.js : Slick을 사용하여 이미지 슬라이드 기능을 구현.
+2. SpecInfo.js : specSlice.js 에서 처리하도록 구현.
+> Radiobutton에 따른 스펙 옵션 선택 부분은 추후에 다시 수정할 예정.
+- react-reveal의 Fade 모듈을 사용하여 텍스트와 이미지에 애니메이션 효과 적용
+
+
+#### Example
+<hr/>
+
+![Cybertruck_gif](https://user-images.githubusercontent.com/56250064/127515338-388b03ba-c0c8-4258-beda-34af19cc7e9e.gif)
+
