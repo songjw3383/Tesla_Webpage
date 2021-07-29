@@ -14,3 +14,10 @@
 4. Styled-component
 5. react-slick ( for slider )
 6. react-reveal ( for page content animation )
+
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
