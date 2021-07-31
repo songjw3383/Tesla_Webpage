@@ -55,6 +55,7 @@ const Spec = styled.div `
 
     @media (max-width: 1280px) {
         flex-direction: column;
+        display: flex;
     }
     
     h2 {
@@ -69,9 +70,10 @@ const Spec = styled.div `
 `
 
 const Form = styled.div `
-    margin-top 1rem;
+    margin-top : 1rem;
     flex: 0.7;
     margin-left: 5rem;
+    
     form {
         align-item: center;
         justify-content: center;
@@ -130,7 +132,12 @@ const SpecTable = styled.div `
 
 const CarPicture = styled.img `
   padding: 2rem;
-  height: 800px;
-  flex: 0.3;
+  max-height: 800px;
+  max-width: 350px;
+  
+  @media (max-width: 1280px) {
+      max-height: 450px;
+      max-width: 200px;
+  }
 
 `
