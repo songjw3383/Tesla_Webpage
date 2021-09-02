@@ -17,15 +17,14 @@ const specSlice = createSlice({
             state.push(initialState.specsName)
         },
         Single:(state, action) => {
-            action = state.push(initialState.Single);
+            state.push(initialState.Single)
         },
         Dual:(state,action) => {
-            action = state.push(initialState.Dual);
+            state.push(initialState.Dual);
         }
         
     }
 })
-console.log(specSlice.actions);
 
 export const selectSpecs = state => state.spec.specsName;
 export const Single = state => state.spec.Single;
