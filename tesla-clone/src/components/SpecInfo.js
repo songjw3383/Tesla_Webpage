@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {useDispatch, useSelector} from 'react-redux'
-import {Dual, selectSpecs, Single} from '../features/car/specSlice'
+import {options, selectSpecs, Single} from '../features/car/specSlice'
 
 function SpecInfo() {
     const [inputStatus, setInputStatus] = useState("");
-    const dispatch = useDispatch();
 
     const handleClickRadioButton = (radioBtnName) => {
         setInputStatus(radioBtnName)
-        dispatch({type:radioBtnName})
+        
     };
     
     const specs = useSelector(selectSpecs);
-    const options = useSelector(() => inputStatus)
     return (
         <Spec>
             <CarPicture src="https://tesla-cdn.thron.com/delivery/public/image/tesla/cybertruck_top/bvlatuR/std/0x0/cybertruck_top" alt="" />
             <Form>
             <h2>SPECS</h2>
                 <form>
-                    <label><input type="radio" name="option" id="Single"  onClick={() =>handleClickRadioButton("Single")}/>Single Motor RWD</label>
+                    <label><input type="radio" name="option" id="Single" value="Single" onClick={() =>handleClickRadioButton("Single")}/>Single Motor RWD</label>
                     <label><input type="radio" name="option" id="Dual"  onClick={() =>handleClickRadioButton("Dual")} />Dual Motor RWD</label>
                     <label><input type="radio" name="option" id="Tri"  onClick={() =>handleClickRadioButton("Tri")} />Tri Motor RWD</label>
                 </form>

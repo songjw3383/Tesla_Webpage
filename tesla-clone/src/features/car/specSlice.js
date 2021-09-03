@@ -27,7 +27,5 @@ const specSlice = createSlice({
 })
 
 export const selectSpecs = state => state.spec.specsName;
-export const Single = state => state.spec.Single;
-export const Dual = state => state.spec.Dual;
-
+export const {Single, Dual} = specSlice.actions;
 export default specSlice.reducer
