@@ -11,7 +11,7 @@ function SpecInfo() {
         
     };
     
-    const specs = useSelector(selectSpecs);
+    // const specs = useSelector(selectSpecs);
     return (
         <Spec>
             <CarPicture src="https://tesla-cdn.thron.com/delivery/public/image/tesla/cybertruck_top/bvlatuR/std/0x0/cybertruck_top" alt="" />
@@ -24,7 +24,7 @@ function SpecInfo() {
                 </form>
             <SpecTable>
                 
-                    <ul>
+                    {/* <ul>
                         {specs && specs.map((spec, index) =>
                         <li key={index}>{spec}</li>)}
                     </ul>
@@ -32,7 +32,7 @@ function SpecInfo() {
                     <ul>
                         {options && options.map((options, index) =>
                             <li key={index}>{options}</li>)}
-                    </ul>
+                    </ul> */}
                 
             </SpecTable>
 
