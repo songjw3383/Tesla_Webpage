@@ -59,5 +59,3 @@
 <hr/>
 
 ![Cybertruck_gif](https://user-images.githubusercontent.com/56250064/127515338-388b03ba-c0c8-4258-beda-34af19cc7e9e.gif)
-
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsongjw3383%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
